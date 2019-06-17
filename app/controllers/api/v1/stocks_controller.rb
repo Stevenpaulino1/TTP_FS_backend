@@ -1,3 +1,5 @@
+module Api
+  module V1
 class StocksController < ApplicationController
   before_action :set_stock, only: [:show, :update, :destroy]
 
@@ -49,3 +51,5 @@ class StocksController < ApplicationController
       params.require(:stock).permit(:tickr_symbol, :total_stock_shares, :current_stock_price)
     end
 end
+end
+end 

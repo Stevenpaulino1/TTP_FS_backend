@@ -1,5 +1,7 @@
+module Api
+  module V1
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
+  # before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /users
   def index
@@ -48,4 +50,6 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :password, :email, :balance)
     end
+end
+end
 end
