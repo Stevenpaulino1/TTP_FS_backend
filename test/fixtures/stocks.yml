@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tickr_symbol: MyString
+  total_stock_shares: 1
+  current_stock_price: 1
+
+two:
+  tickr_symbol: MyString
+  total_stock_shares: 1
+  current_stock_price: 1
