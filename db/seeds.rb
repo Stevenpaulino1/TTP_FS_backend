@@ -16,5 +16,5 @@ Stock.create(tickr_symbol: "GOOG", total_stock_shares:100,current_stock_price:25
 Stock.create(tickr_symbol: "AAPL", total_stock_shares:500,current_stock_price:20)
 Stock.create(tickr_symbol: "MFST", total_stock_shares:5,current_stock_price:10)
 
-UserStock.create(user_id:User.all.sample.id, stock_id:Stock.all.sample.id,date_purchased:6132019,purchase_price:Stock.all.sample.current_stock_price,  owned_stocks: 5)
-UserStock.create(user_id:User.all.sample.id, stock_id:Stock.all.sample.id,date_purchased:6132019, purchase_price:Stock.all.sample.current_stock_price, owned_stocks: 10)
+UserStock.create(user_id:User.all.sample.id, stock_id:Stock.all.sample.id,date_purchased:6132019,purchase_price:Stock.all.sample.current_stock_price,  owned_stocks: 5, tickr:Stock.all.sample.tickr_symbol)
+UserStock.create(user_id:User.all.sample.id, stock_id:Stock.all.sample.id,date_purchased:6132019, purchase_price:Stock.all.sample.current_stock_price, owned_stocks: 10, tickr:Stock.all.sample.tickr_symbol)

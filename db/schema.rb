@@ -10,14 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_17_204325) do
+ActiveRecord::Schema.define(version: 2019_06_18_191629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-## DO NOT EDIT BELOW THIS LINE
-##_______________________________________
-
 
   create_table "stocks", force: :cascade do |t|
     t.string "tickr_symbol"
@@ -35,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_06_17_204325) do
     t.integer "owned_stocks"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "tickr"
   end
 
   create_table "users", force: :cascade do |t|
