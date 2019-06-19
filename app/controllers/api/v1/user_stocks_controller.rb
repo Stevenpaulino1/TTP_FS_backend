@@ -1,3 +1,5 @@
+module Api
+  module V1
 class UserStocksController < ApplicationController
   before_action :set_user_stock, only: [:show, :update, :destroy]
 
@@ -16,9 +18,9 @@ class UserStocksController < ApplicationController
   # POST /user_stocks
   def create
     @user_stock = UserStock.new(user_stock_params)
-
+    
     if @user_stock.save
-      render json: @user_stock, status: :created, location: @user_stock
+      render json: @user_stock, status: :created
     else
       render json: @user_stock.errors, status: :unprocessable_entity
     end
@@ -46,6 +48,8 @@ class UserStocksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_stock_params
-      params.require(:user_stock).permit(:user_id, :stock_id, :date_purchased, :purchase_price, :owned_stocks)
+      params.require(:user_stock).permit(:user_id, :stock_id, :date_purchased, :purchase_price, :owned_stocks, :tickr)
     end
+end
+end
 end
