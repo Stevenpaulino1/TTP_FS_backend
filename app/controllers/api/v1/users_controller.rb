@@ -1,7 +1,7 @@
 module Api
   module V1
 class UsersController < ApplicationController
-  # before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /users
   def index
@@ -12,16 +12,18 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    byebug
     render json: @user
   end
 
   # POST /users
   def create
+    # byebug
     @user = User.new(user_params)
-
-    if @user.save
-      render json: @user, status: :created, location: @user
+    if @user.valid?
+     @user.save
+     token = issue_token({jwt:@user.id})
+      # render json: @user,  :created, location: @user
+      render json: {jwt: token , user:@user}
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -49,7 +51,7 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:name, :password, :email, :balance)
+      params.permit(:name, :password, :email)
     end
 end
 end
