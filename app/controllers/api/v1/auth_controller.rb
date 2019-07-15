@@ -19,11 +19,10 @@ end
 def find_user
   token = request.headers["Authorization"]
   decoded_token = decode(token)
-  @user = User.find(decoded_token[0].jwt)
+  @user = User.find(decoded_token[0]["JWT"])
   render json: {user: @user }
-else
-  render json:{error: "Cannot find "}
 end
+
 
 end
 end

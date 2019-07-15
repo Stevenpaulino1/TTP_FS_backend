@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :user_stocks
 
   post "/auth", to: "auth#create"
-   get "/signup", to: "auth#find_user"
+   get "/login", to: "auth#find_user"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
